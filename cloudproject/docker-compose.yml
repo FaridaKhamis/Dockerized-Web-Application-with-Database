@@ -1,0 +1,30 @@
+# Specifies the version of the Docker Compose file format being used.
+version: '3.8'
+
+ # Defines the services that compose our application.
+services:
+
+# Defines the configuration for the 'web' service.
+  web:
+    build: ./app     # Specifies the build context for the Dockerfile of the 'web' service.
+    ports:           # Exposes ports from the container to the host.
+      - "3000:3000"   # Maps port 3000 on the host to port 3000 in the container.
+    depends_on:         # Specifies dependencies between services.
+      - db              # Indicates that the 'web' service depends on the 'db' service.
+    volumes:            # Mounts volumes from the host into the container
+                        #it's connecting a directory on the host machine(docker running) to a directory inside the container.
+      - ./app:/app       # Maps the local ./app directory to the /app directory in the container.
+
+  db:
+    build: ./db
+    environment:          # Sets environment variables for the 'db' service(name,password)
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: studentdb
+    volumes:                
+      - dbdata:/var/lib/mysql     # Maps the 'dbdata' volume to the /var/lib/mysql directory in the container.
+
+
+volumes:        # Defines named volumes that can be used by services
+  dbdata:       # Defines a volume named 'dbdata' for persisting MySQL data.
+
+#This volume mapping is commonly used for sharing application code between the host and the container during development

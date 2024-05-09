@@ -1,0 +1,31 @@
+/* Define styles for the body of the HTML document */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F8FF; /* Baby blue background */
+    color: #800080; /* Purple text color */
+    padding: 20px;   /* Add padding(specifies the amount of space between the content of an element and its border) around the content */
+}
+
+/* Define styles for the h1 heading */
+h1 {
+    color: #84042e; /* Pink color for headings */
+}
+
+/* Define styles for unordered lists */
+ul {
+    list-style-type: none;   /* Remove bullet points(way of organizing and presenting information) from the list */
+    padding: 0;   /* Remove default padding from the list */
+}
+
+/* Define styles for list items */
+li {
+    background-color: #E6E6FA; /* Light purple for list items */
+    margin: 8px 0;    /* Add margin above and below the list items */
+    padding: 10px;    /* Add padding inside the list items */
+    border-radius: 5px;    /* Add rounded corners to list items */
+}
+
+/* Define styles for list items when hovering over them */
+li:hover {
+    background-color: #FFB6C1; /* Light red when hovering over list items */
+}

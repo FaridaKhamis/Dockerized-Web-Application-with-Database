@@ -1,0 +1,14 @@
+#Flask is a lightweight WSGI web application framework in Python.
+Flask==2.0.3
+
+#Jinja2 is a modern and designer-friendly templating language for Python.
+Jinja2==3.0.3
+
+#MarkupSafe is a library for Python that implements a string that is safe for HTML.
+MarkupSafe==2.0.1
+
+#pymysql is a pure-Python MySQL client library.
+pymysql==1.0.2
+
+#itsdangerous is a package that provides various helpers to pass data to untrusted environments and to get it back safely.
+itsdangerous==2.0.1

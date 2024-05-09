@@ -1,0 +1,33 @@
+<!--Declares the document type and version of HTML-->
+<!DOCTYPE html>
+
+<!--Indicates the language of the document (English).-->
+<html lang="en">
+
+<!--Contains metadata about the document, such as character set, viewport, title, and links to external resources.-->
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Sets the viewport to the width of the device and initial zoom level.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>   <!--Sets the title of the page-->
+
+    <!--Links to an external CSS file named style.css stored in the static folder-->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<!--Contains the content of the HTML document.-->
+<body>     
+    <h1>Student's Data Records </h1>     <!-- Displays a heading for the page.-->
+    <ul>       <!-- Defines an unordered list to display student data.-->
+
+        <!--Begins a for loop to iterate over the students data passed from the Flask application.-->
+        {% for student in students %}
+
+         <!-- Displays each student's information within list items.-->
+         <!--Inserts student information from the Flask application into the HTML template.-->
+        <li>ID: {{ student[0] }}, Name: {{ student[1] }}, Age: {{ student[2] }}, CGPA: {{ student[3] }}, Additional Info: {{ student[4] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
